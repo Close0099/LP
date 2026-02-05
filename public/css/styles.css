@@ -1,0 +1,73 @@
+/* Estilos Gerais */
+body {
+    font-family: sans-serif;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f0f2f5;
+}
+
+.container {
+    text-align: center;
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.hidden {
+    display: none;
+}
+
+/* Interface Pública */
+.satisfaction-buttons button {
+    font-size: 4rem;
+    margin: 0 1rem;
+    border: none;
+    background: none;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.satisfaction-buttons button:hover {
+    transform: scale(1.2);
+}
+
+#feedback-message {
+    margin-top: 1rem;
+    color: green;
+}
+
+/* Área de Administração */
+#login-container, #admin-container {
+    width: 90%;
+    max-width: 1200px;
+}
+
+#login-container input {
+    display: block;
+    margin: 0.5rem auto;
+    padding: 0.5rem;
+    width: 250px;
+}
+
+#admin-container .stats, #admin-container .charts, #admin-container .filters, #admin-container .history, #admin-container .export {
+    margin: 2rem 0;
+}
+
+#history-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#history-table th, #history-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+#history-table th {
+    background-color: #f2f2f2;
+}

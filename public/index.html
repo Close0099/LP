@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registo de Satisfação</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Como foi o seu atendimento?</h1>
+        <div class="satisfaction-buttons">
+            <button id="muito_satisfeito">😀</button>
+            <button id="satisfeito">🙂</button>
+            <button id="insatisfeito">😡</button>
+        </div>
+        <div id="feedback-message" class="hidden">
+            <p>Obrigado pelo seu feedback!</p>
+        </div>
+    </div>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore-compat.js"></script>
+    <script src="js/firebase-config.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

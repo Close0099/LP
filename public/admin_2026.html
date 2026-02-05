@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Área de Administração</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div id="login-container">
+        <h2>Login</h2>
+        <input type="email" id="email" placeholder="Email">
+        <input type="password" id="password" placeholder="Password">
+        <button id="login-button">Entrar</button>
+    </div>
+
+    <div id="admin-container" class="hidden">
+        <h1>Dashboard de Satisfação</h1>
+        <div class="stats">
+            <div id="totals"></div>
+            <div id="percentages"></div>
+        </div>
+        <div class="charts">
+            <canvas id="bar-chart"></canvas>
+            <canvas id="pie-chart"></canvas>
+        </div>
+        <div class="filters">
+            <input type="date" id="date-filter">
+            <button id="filter-button">Filtrar por Dia</button>
+            <button id="compare-button">Comparar Dias</button>
+        </div>
+        <div class="history">
+            <h2>Histórico de Registos</h2>
+            <table id="history-table">
+                <thead>
+                    <tr>
+                        <th>Satisfação</th>
+                        <th>Data</th>
+                        <th>Hora</th>
+                        <th>Dia da Semana</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+        <div class="export">
+            <button id="export-csv">Exportar para CSV</button>
+            <button id="export-txt">Exportar para TXT</button>
+        </div>
+        <button id="logout-button">Sair</button>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore-compat.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="js/firebase-config.js"></script>
+    <script src="js/admin.js"></script>
+</body>
+</html>
