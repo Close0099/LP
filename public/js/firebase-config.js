@@ -1,11 +1,11 @@
 // Adicione suas credenciais do Firebase aqui
 const firebaseConfig = {
-  apiKey: "SUA_API_KEY",
-  authDomain: "SEU_AUTH_DOMAIN",
-  projectId: "SEU_PROJECT_ID",
-  storageBucket: "SEU_STORAGE_BUCKET",
-  messagingSenderId: "SEU_MESSAGING_SENDER_ID",
-  appId: "SEU_APP_ID"
+  apiKey: "AIzaSyAxJfy5ySsE74lE2TiTCgMRUMc5DzAs1kg",
+  authDomain: "novo-2fecd.firebaseapp.com",
+  projectId: "novo-2fecd",
+  storageBucket: "novo-2fecd.appspot.com",
+  messagingSenderId: "549786724527",
+  appId: "1:549786724527:web:dfb8a8bad9e83973d04c5a"
 };
 
 // Inicializa o Firebase
