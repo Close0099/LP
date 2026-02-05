@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Resumo Mensal</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="admin-body" data-mode="month">
+    <div class="admin-layout">
+        <aside class="sidebar d-flex flex-column p-3">
+            <div class="d-flex align-items-center mb-4 brand">
+                <span class="brand-icon me-2">📊</span>
+                <span class="fw-bold">Painel Admin</span>
+            </div>
+            <nav class="nav flex-column gap-2 mt-3">
+                <a class="nav-link" href="admin_2026.html">
+                    <span class="me-3">🏠</span> Dashboard
+                </a>
+                <a class="nav-link active" href="admin_month.html">
+                    <span class="me-3">📅</span> Mensal
+                </a>
+                <a class="nav-link" href="admin_week.html">
+                    <span class="me-3">🗓️</span> Semanal
+                </a>
+                <a class="nav-link" href="admin_day.html">
+                    <span class="me-3">☀️</span> Diário
+                </a>
+                <a class="nav-link" href="admin_history.html">
+                    <span class="me-3">🕐</span> Histórico
+                </a>
+                <a class="nav-link" href="admin_export.html">
+                    <span class="me-3">📥</span> Exportação
+                </a>
+            </nav>
+            <div class="mt-auto pt-3 border-top border-secondary-subtle small text-white-50">
+                <a href="index.html" class="text-white-50 text-decoration-none">← Voltar ao público</a>
+            </div>
+        </aside>
+
+        <main class="content-area">
+            <header class="d-flex flex-wrap align-items-center justify-content-between mb-4">
+                <div>
+                    <p class="text-uppercase text-muted small mb-1">Resumo Mensal</p>
+                    <h1 class="h4 mb-0">Mês atual</h1>
+                </div>
+                <a href="admin_2026.html" class="btn btn-outline-secondary btn-sm">Voltar ao dashboard</a>
+            </header>
+
+            <section class="mb-4">
+                <div class="card shadow-sm h-100">
+                    <div class="card-body">
+                        <div class="d-flex flex-wrap gap-2 align-items-center mb-3">
+                            <div>
+                                <label for="month-picker" class="form-label mb-0 me-2">Escolher mês</label>
+                                <input type="month" id="month-picker" class="form-control form-control-sm d-inline-block" style="min-width: 180px;">
+                            </div>
+                            <button id="month-apply" class="btn btn-primary btn-sm">Aplicar</button>
+                        </div>
+                        <div id="period-summary" class="mb-3"></div>
+                        <canvas id="period-bar"></canvas>
+                    </div>
+                </div>
+            </section>
+
+            <section class="mb-4">
+                <div class="card shadow-sm">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <h2 class="h6 text-muted mb-0">Histórico do mês (máx. 200 registos)</h2>
+                            <small class="text-muted">Ordenado do mais recente para o mais antigo</small>
+                        </div>
+                        <div class="table-responsive">
+                            <table id="history-table" class="table table-sm align-middle">
+                                <thead class="table-light">
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Satisfação</th>
+                                        <th>Data</th>
+                                        <th>Hora</th>
+                                        <th>Dia da Semana</th>
+                                    </tr>
+                                </thead>
+                                <tbody></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore-compat.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="js/firebase-config.js"></script>
+    <script src="js/admin-period.js"></script>
+</body>
+</html>

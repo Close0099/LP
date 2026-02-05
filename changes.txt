@@ -1,0 +1,52 @@
+Resumo das alterações recentes:
+
+1) Código de acesso configurável e login melhorado
+- `public/js/firebase-config.js`: adicionado `ADMIN_ACCESS_CODE`.
+- `public/admin_login.html`: usa o código configurável, limite de tentativas (5) com bloqueio de 30s, feedback de sucesso, toggle mostrar/ocultar código, leitura de `firebase-config.js`.
+- `public/css/styles.css`: tema vermelho para login e botão toggle de visibilidade.
+
+2) Tema vermelho para admin
+- `public/css/styles.css`: sidebar e conteúdo em tons de vermelho, gradiente e sombras.
+
+3) Melhorias no dashboard admin
+- `public/admin_2026.html`: adicionados botões de filtro rápido (Hoje, Ontem, Últimos 7 dias); paginação do histórico (prev/next + indicador); botão "Copiar" na exportação.
+- `public/js/admin.js`: filtros rápidos; paginação simples do histórico (50 por página); export TXT via Blob; novo botão copiar para clipboard.
+
+4) Tema e status no admin
+- `public/admin_2026.html`: botão de alternar tema (claro/escuro) e indicador online/offline.
+- `public/js/admin.js`: guarda preferência de tema em localStorage e aplica; indicador online/offline.
+- `public/js/admin-period.js`: aplica tema escuro se salvo.
+- `public/css/styles.css`: tema escuro para admin.
+
+5) Página pública
+- `public/js/main.js`: link Admin agora abre `admin_login.html`.
+
+6) Melhorias estéticas
+- Sidebar do Admin redesenhada com gradiente "Merlot" e ícones novos.
+- Efeito de "Glassmorphism" implementado para login e cartões.
+- Tipografia aprimorada (Segoe UI / Poppins) e espaçamento.
+- Modo escuro refinado com paleta de cores Slate.
+- Novos ícones de navegação adicionados a todas as páginas do admin.
+
+7) Gráfico de Evolução Mensal
+- `public/js/admin.js`: Implementado gráfico de barras agrupadas de evolução anual.
+- Visualização detalhada: Para cada mês (Janeiro a Dezembro), são exibidas 3 barras comparativas (Muito Satisfeito, Satisfeito, Insatisfeito).
+- Permite analisar a tendência de satisfação ao longo do ano.
+
+8) IDs Sequenciais no Firestore
+- `public/js/main.js`: Modificado para usar uma Transação do Firestore.
+- Mantém um contador em `metadata/counters`.
+- Novos registros recebem IDs como 1, 2, 3... em vez de hashes aleatórios.
+
+9) Botão de Resetar Banco de Dados
+- Adicionado um botão "Reset Dados" na sidebar do Admin.
+- Implementa uma proteção contra ações perigosas (Confirmação Dupla).
+- Exclui todos os documentos em `satisfaction_logs` e redefine `metadata/counters` para 0.
+
+Como usar
+- Código padrão: 1234 (ajuste em `public/js/firebase-config.js`).
+- Login: tenta 5 vezes; se errar, bloqueia 30s. Botão "Mostrar" alterna visibilidade do código.
+- Dashboard: use filtros rápidos ou data; histórico paginado; exporte CSV/TXT ou copie para clipboard.
+- Resetar Dados: use com cuidado; requer confirmação dupla; apaga logs de satisfação e reseta contadores.
+
+Data: 05/02/2026

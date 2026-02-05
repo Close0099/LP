@@ -8,6 +8,9 @@ const firebaseConfig = {
   appId: "1:549786724527:web:dfb8a8bad9e83973d04c5a"
 };
 
+// Código de acesso do painel admin (pode ajustar aqui)
+const ADMIN_ACCESS_CODE = '1234';
+
 // Inicializa o Firebase
 firebase.initializeApp(firebaseConfig);
 const db = firebase.firestore();
